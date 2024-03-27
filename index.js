@@ -13,7 +13,7 @@ const port = 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.get("/", (req,res)=>{
-  res.sendFile(__dirname + "/index.html")
+  res.render("index.ejs")
 
 });
 
@@ -58,8 +58,6 @@ app.get("/portfolio", (req,res)=>{
 app.get("/services", (req,res)=>{
   res.render("sevices.ejs")
 });
-
-
 
 app.listen(port,()=>{
    console.log(`lestining in port : ${port}`)
